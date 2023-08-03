@@ -1,14 +1,32 @@
+import fs from "fs";
 import chalk from "chalk";
 
-console.log(chalk.blue("Olá mundo!"));
+function trataErro(erro) {
+  throw new Error(chalk.red(erro.code, "Não há arquivo no diretório!"));
+}
 
-console.log(
-  chalk.red(
-    "São geralmente recuperados a partir de um objeto [FileList](https://developer.mozilla.org/pt-BR/docs/Web/API/FileList) que é retornado como resultado da seleção, pelo usuário, de arquivos através do elemento [<input>](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input), a partir do objeto [DataTransfer](https://developer.mozilla.org/pt-BR/docs/Web/API/DataTransfer)"
-  )
-);
-console.log(
-  chalk.magenta.bold(
-    "São geralmente recuperados a partir de um objeto [FileList](https://developer.mozilla.org/pt-BR/docs/Web/API/FileList) que é retornado como resultado da seleção, pelo usuário, de arquivos através do elemento [<input>](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input), a partir do objeto [DataTransfer](https://developer.mozilla.org/pt-BR/docs/Web/API/DataTransfer)"
-  )
-);
+// Async/Await
+
+async function pegaArquivo(caminhoDoArquivo) {
+  const encoding = "utf-8";
+  try {
+    const texto = await fs.promises.readFile(caminhoDoArquivo, encoding);
+    console.log(chalk.green(texto));
+  } catch (erro) {
+    trataErro(erro);
+  } finally {
+    console.log(chalk.yellow("Operação concluída"));
+  }
+}
+
+// Promises com then()
+
+// function pegaArquivo(caminhoDoArquivo) {
+//   const encoding = "utf-8";
+//   fs.promises
+//     .readFile(caminhoDoArquivo, encoding)
+//     .then((texto) => console.log(chalk.blue(texto)))
+//     .catch(trataErro);
+// }
+
+pegaArquivo("./arquivos/texto.md");
