@@ -1,8 +1,16 @@
 {
-  "name": "2708-node-lib-md",
+  "name": "px-node-lib-md",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Capturando links de arquivos .md",
+  "keywords": [
+    "markdown",
+    "URL"
+  ],
+  "main": "./cli.js",
+  "bin": {
+    "<px-node-lib-md>": "./cli.js"
+  },
+  "preferGlobal": true,
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,15 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alura-cursos/2708-node-lib-md.git"
+    "url": "git+https://github.com/Murfy9/node-lib.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Pedro Xavier",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alura-cursos/2708-node-lib-md/issues"
+    "url": "https://github.com/Murfy9/node-lib"
   },
-  "homepage": "https://github.com/alura-cursos/2708-node-lib-md#readme",
+  "homepage": "https://github.com/Murfy9",
   "dependencies": {
     "chalk": "5.0.1"
   }
