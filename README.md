@@ -1,12 +1,9 @@
- bibliotecas em JS com Node.js
-
 <div align="center">
 <h1>📚  Node.js<br/>
 Curso na Alura - Node.js: criando sua primeira biblioteca
 
 <h2>Aprendendo a trabalhar com código assíncrono em Node.js e usando as bibliotecas mais recentes do Node.js para fazer requisições HTTP e manejar respostas.</h2>
 </div>
-
 
 ## 🔨 Tecnologias utilizadas durante o curso
 
